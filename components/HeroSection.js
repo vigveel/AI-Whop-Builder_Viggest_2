@@ -1,73 +1,42 @@
-
+"use client";
 import React from "react";
 import { Button } from "./ui/button";
-import { Rocket, Play } from "lucide-react";
-import { mockData } from "../data/mock";
 
-const HeroSection = () => {
-  const { hero } = mockData;
-
+export default function HeroSection() {
   const handleJoinEarlyAccess = () => {
-    // Mock action - will be replaced with real functionality
-    alert("Joining Early Access + Discord! (Mock action)");
+    // Pega aquí tu invite de Discord
+    window.location.href = "https://discord.gg/TU_INVITE";
   };
-
   const handleWatchDemo = () => {
-    // Mock action - will be replaced with real functionality
-    alert("Opening demo video! (Mock action)");
+    // Pega aquí tu Loom si lo tienes
+    window.location.href = "https://loom.com/share/DEMO_ID";
   };
 
   return (
     <section className="hero-section relative min-h-screen flex items-center justify-center px-6">
-      {/* Futuristic background with glowing orbs */}
+      {/* Background */}
       <div className="absolute inset-0 hero-bg">
-        <div className="hero-gradient"></div>
-        <div className="hero-orb hero-orb-1"></div>
-        <div className="hero-orb hero-orb-2"></div>
-        <div className="hero-orb hero-orb-3"></div>
+        <div className="hero-gradient" />
       </div>
-      
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
-        <div className="space-y-8 animate-fade-in">
-          <h1 className="display-lg text-primary-text leading-tight">
-                        Launch your <span className="text-accent font-bold">digital product</span> on Whop <span className="hero-highlight">in minutes with AI</span>.
 
-          </h1>
-          
-          <p className="body-lg text-secondary-text max-w-3xl mx-auto">
-            {hero.subheadline}
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-8">
-            <Button 
-              onClick={handleJoinEarlyAccess}
-              className="btn-primary flex items-center gap-3 text-lg px-8 py-4"
-            >
-              <Rocket className="w-5 h-5" />
-              {hero.primaryCTA}
-            </Button>
-            
-            <Button 
-              variant="outline" 
-              onClick={handleWatchDemo}
-              className="btn-secondary flex items-center gap-3 text-lg px-8 py-4"
-            >
-              <Play className="w-5 h-5" />
-              {hero.secondaryCTA}
-            </Button>
-          </div>
-        </div>
-      </div>
-      
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
-        <div className="w-6 h-10 border-2 border-accent rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-accent rounded-full mt-2 animate-bounce"></div>
+      <div className="container relative z-10 mx-auto max-w-5xl text-center">
+        <h1 className="h1">
+          Launch your <span className="text-accent">digital product</span> on Whop in minutes{" "}
+          <span className="underline decoration-4 decoration-accent">with AI</span>.
+        </h1>
+        <p className="body-lg text-secondary-text mt-4">
+          Skip the $XXX program. My AI co-founder designs, validates & launches your product for you — faster, cheaper, easier.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <Button onClick={handleJoinEarlyAccess} className="px-6 py-3">
+            🚀 Join Early Access + Discord
+          </Button>
+          <Button onClick={handleWatchDemo} variant="outline" className="px-6 py-3">
+            ▶ Watch Demo
+          </Button>
         </div>
       </div>
     </section>
   );
-};
-
-export default HeroSection;
+}
