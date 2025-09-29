@@ -1,17 +1,16 @@
-
 import React from "react";
-import HeroSection from "../components/HeroSection";
-import WhySection from "../components/WhySection";
-import HowItWorksSection from "../components/HowItWorksSection";
-import WhatYouGetSection from "../components/WhatYouGetSection";
-import BetaAccessSection from "../components/BetaAccessSection";
-import CommunitySection from "../components/CommunitySection";
-import FAQSection from "../components/FAQSection";
-import Footer from "../components/Footer";
+import HeroSection from "./HeroSection";
+import WhySection from "./WhySection";
+import HowItWorksSection from "./HowItWorksSection";
+import WhatYouGetSection from "./WhatYouGetSection";
+import BetaAccessSection from "./BetaAccessSection";
+import CommunitySection from "./CommunitySection";
+import FAQSection from "./FAQSection";
+import Footer from "./Footer";
 
-const LandingPage = () => {
+export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-primary">
+    <>
       <HeroSection />
       <WhySection />
       <HowItWorksSection />
@@ -20,8 +19,6 @@ const LandingPage = () => {
       <CommunitySection />
       <FAQSection />
       <Footer />
-    </div>
+    </>
   );
-};
-
-export default LandingPage;
+}
