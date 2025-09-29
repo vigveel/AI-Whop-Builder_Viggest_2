@@ -1,57 +1,33 @@
-
 import React from "react";
 import { Card, CardContent } from "./ui/card";
-import { ArrowRight } from "lucide-react";
-import { mockData } from "../data/mock";
 
-const HowItWorksSection = () => {
-  const { howItWorks } = mockData;
+const steps = [
+  { n: "1", t: "Tell the AI", d: "Share your skills or your idea." },
+  { n: "2", t: "Get a Whop-ready blueprint", d: "Offer, copy, pricing, and a 48h launch plan." },
+  { n: "3", t: "Publish & start selling", d: "Copy-paste to Whop with our checklist." },
+];
 
+export default function HowItWorksSection() {
   return (
-    <section className="py-20 px-6 bg-primary">
-      <div className="container mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="display-md text-primary-text mb-4">
-            {howItWorks.headline}
-          </h2>
-          <p className="body-lg text-secondary-text max-w-2xl mx-auto">
-            {howItWorks.subheadline}
-          </p>
+    <section className="py-20 px-6">
+      <div className="container mx-auto max-w-5xl">
+        <div className="text-center mb-10">
+          <span className="pill">How it works</span>
+          <h2 className="h2 mt-4">From idea to live in minutes</h2>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
-          {howItWorks.steps.map((step, index) => (
-            <div key={index} className="relative">
-              <Card className="feature-card hover-lift">
-                <CardContent className="p-0">
-                  <div className="text-center">
-                    <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6">
-                      <span className="text-2xl font-bold text-primary">
-                        {step.step}
-                      </span>
-                    </div>
-                    <h3 className="h3 text-primary-text mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="body-md text-secondary-text">
-                      {step.description}
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-              
-              {/* Arrow connector for desktop */}
-              {index < howItWorks.steps.length - 1 && (
-                <div className="hidden md:block absolute top-1/2 -right-4 transform -translate-y-1/2 z-10">
-                  <ArrowRight className="w-8 h-8 text-accent" />
-                </div>
-              )}
-            </div>
+
+        <div className="grid sm:grid-cols-3 gap-6">
+          {steps.map(s => (
+            <Card key={s.n}>
+              <CardContent>
+                <div className="text-accent font-bold text-lg mb-2">Step {s.n}</div>
+                <div className="h4">{s.t}</div>
+                <p className="text-secondary-text mt-2">{s.d}</p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
     </section>
   );
-};
-
-export default HowItWorksSection;
+}
