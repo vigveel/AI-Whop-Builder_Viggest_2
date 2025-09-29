@@ -18,20 +18,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section className=\"hero-section relative min-h-screen flex items-center justify-center px-6\">
+    <section className="hero-section relative min-h-screen flex items-center justify-center px-6">
       {/* Futuristic background with glowing orbs */}
-      <div className=\"absolute inset-0 hero-bg\">
-        <div className=\"hero-gradient\"></div>
-        <div className=\"hero-orb hero-orb-1\"></div>
-        <div className=\"hero-orb hero-orb-2\"></div>
-        <div className=\"hero-orb hero-orb-3\"></div>
+      <div className="absolute inset-0 hero-bg">
+        <div className="hero-gradient"></div>
+        <div className="hero-orb hero-orb-1"></div>
+        <div className="hero-orb hero-orb-2"></div>
+        <div className="hero-orb hero-orb-3"></div>
       </div>
       
       {/* Content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <div className="space-y-8 animate-fade-in">
           <h1 className="display-lg text-primary-text leading-tight">
-                        Launch your <span className=\"text-accent font-bold\">digital product</span> on Whop <span className=\"hero-highlight\">in minutes with AI</span>.
+                        Launch your <span className="text-accent font-bold">digital product</span> on Whop <span className="hero-highlight">in minutes with AI</span>.
 
           </h1>
           
